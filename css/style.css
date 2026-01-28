@@ -1,67 +1,122 @@
-/* AfricanBeaches.com - Mobile-First Stylesheet */
+/* AfricanBeaches.com - Luxury Black & White Theme */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --primary:#0e7490;
-  --primary-dark:#155e75;
-  --accent:#f59e0b;
-  --sand:#fef3c7;
-  --ocean:#ecfeff;
-  --text:#1e293b;
-  --text-light:#64748b;
-  --white:#fff;
-  --radius:8px;
-  --max-w:1100px;
+  --black:#0a0a0a;
+  --charcoal:#1a1a1a;
+  --dark-grey:#2d2d2d;
+  --grey:#6b6b6b;
+  --light-grey:#e5e5e5;
+  --off-white:#f8f8f8;
+  --white:#ffffff;
+  --gold:#c9a962;
+  --gold-light:#d4bc7c;
+  --radius:2px;
+  --max-w:1200px;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Inter',system-ui,-apple-system,sans-serif;
 }
 html{font-size:16px;scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
+body{font-family:var(--font-sans);color:var(--charcoal);line-height:1.7;background:var(--white);font-weight:300}
 
 /* Header / Nav */
-header{background:var(--primary);color:var(--white);padding:1rem}
-header .inner{max-width:var(--max-w);margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
-header .logo{font-size:1.35rem;font-weight:700;text-decoration:none;color:var(--white)}
-nav a{color:var(--sand);text-decoration:none;margin-left:1.25rem;font-size:.95rem}
-nav a:hover{text-decoration:underline}
+header{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;border-bottom:1px solid var(--dark-grey)}
+header .inner{max-width:var(--max-w);margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+header .logo{font-family:var(--font-serif);font-size:1.5rem;font-weight:400;letter-spacing:.05em;text-decoration:none;color:var(--white);text-transform:uppercase}
+nav{display:flex;gap:2rem}
+nav a{color:var(--light-grey);text-decoration:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400;transition:color .2s}
+nav a:hover{color:var(--gold)}
 
 /* Hero */
-.hero{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:var(--white);padding:3.5rem 1rem;text-align:center}
-.hero h1{font-size:2rem;margin-bottom:.75rem}
-.hero p{font-size:1.1rem;max-width:640px;margin:auto;opacity:.9}
+.hero{background:var(--black);color:var(--white);padding:5rem 1.5rem;text-align:center}
+.hero h1{font-family:var(--font-serif);font-size:2.75rem;font-weight:400;margin-bottom:1rem;letter-spacing:.02em}
+.hero p{font-size:1.05rem;max-width:700px;margin:auto;color:var(--light-grey);font-weight:300;line-height:1.8}
+.hero .btn{margin-top:2rem}
 
 /* Section */
-section{max-width:var(--max-w);margin:2rem auto;padding:0 1rem}
-section h2{font-size:1.5rem;margin-bottom:1rem;color:var(--primary-dark)}
+section{max-width:var(--max-w);margin:4rem auto;padding:0 1.5rem}
+section h2{font-family:var(--font-serif);font-size:1.75rem;font-weight:400;margin-bottom:2rem;color:var(--black);letter-spacing:.02em;border-bottom:1px solid var(--light-grey);padding-bottom:.75rem}
 
 /* Cards grid */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
-.card{border:1px solid #e2e8f0;border-radius:var(--radius);overflow:hidden;transition:box-shadow .2s}
-.card:hover{box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.card-img{width:100%;height:180px;object-fit:cover;background:var(--ocean)}
-.card-body{padding:1rem}
-.card-body h3{font-size:1.15rem;margin-bottom:.35rem}
-.card-body p{font-size:.9rem;color:var(--text-light)}
-.card-body a{display:inline-block;margin-top:.5rem;color:var(--primary);font-weight:600;text-decoration:none}
-.card-body a:hover{text-decoration:underline}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem}
+.card{border:1px solid var(--light-grey);background:var(--white);overflow:hidden;transition:all .3s ease}
+.card:hover{box-shadow:0 8px 30px rgba(0,0,0,.12);transform:translateY(-2px)}
+.card-img{width:100%;height:220px;background:var(--light-grey);display:block;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter .3s}
+.card:hover .card-img img{filter:grayscale(0%)}
+.card-body{padding:1.5rem}
+.card-body h3{font-family:var(--font-serif);font-size:1.25rem;font-weight:400;margin-bottom:.5rem;color:var(--black)}
+.card-body p{font-size:.9rem;color:var(--grey);line-height:1.6}
+.card-body a{display:inline-block;margin-top:1rem;color:var(--black);font-weight:500;text-decoration:none;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color .2s}
+.card-body a:hover{color:var(--gold)}
 
-/* Beach detail */
-.beach-detail{max-width:var(--max-w);margin:2rem auto;padding:0 1rem}
-.beach-detail h1{font-size:1.75rem;color:var(--primary-dark);margin-bottom:.5rem}
-.meta{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.25rem;font-size:.9rem;color:var(--text-light)}
-.meta span{background:var(--ocean);padding:.25rem .6rem;border-radius:4px}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
-.info-grid dt{font-weight:600;font-size:.85rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.03em}
-.info-grid dd{margin:0 0 1rem}
+/* Beach detail / Country pages */
+.beach-detail{max-width:var(--max-w);margin:0 auto;padding:2rem 1.5rem}
+.beach-detail h1{font-family:var(--font-serif);font-size:2.5rem;font-weight:400;color:var(--black);margin-bottom:.75rem;letter-spacing:.01em}
+.beach-detail h2{font-family:var(--font-serif);font-size:1.35rem;font-weight:400;color:var(--black);margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--light-grey)}
+.beach-detail p{margin-bottom:1rem}
+.beach-detail ul{margin:1rem 0 1rem 1.5rem}
+.beach-detail li{margin-bottom:.5rem}
+
+.meta{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.5rem;font-size:.8rem;color:var(--grey);text-transform:uppercase;letter-spacing:.05em}
+.meta span{background:var(--off-white);padding:.4rem .8rem;border:1px solid var(--light-grey)}
+
+/* Hero image for detail pages */
+.hero-image{width:100%;height:50vh;min-height:400px;max-height:600px;object-fit:cover;filter:grayscale(30%)}
+.hero-image-container{position:relative;background:var(--black)}
+.hero-image-container::after{content:'';position:absolute;bottom:0;left:0;right:0;height:150px;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.image-credit{position:absolute;bottom:1rem;right:1rem;font-size:.7rem;color:rgba(255,255,255,.7);z-index:1}
+.image-credit a{color:rgba(255,255,255,.9);text-decoration:underline}
+
+/* Info grid */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem 2rem;margin:1.5rem 0;padding:1.5rem;background:var(--off-white);border:1px solid var(--light-grey)}
+.info-grid dt{font-weight:500;font-size:.75rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em}
+.info-grid dd{margin:0 0 1rem;color:var(--charcoal)}
 
 /* Table */
-table{width:100%;border-collapse:collapse;margin:1rem 0}
-th,td{text-align:left;padding:.6rem .75rem;border-bottom:1px solid #e2e8f0;font-size:.92rem}
-th{background:var(--ocean);font-weight:600;color:var(--primary-dark)}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+th,td{text-align:left;padding:.85rem 1rem;border-bottom:1px solid var(--light-grey);font-size:.9rem}
+th{background:var(--black);color:var(--white);font-weight:500;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em}
+tr:hover td{background:var(--off-white)}
+td a{color:var(--black);text-decoration:none;border-bottom:1px solid var(--gold)}
+td a:hover{color:var(--gold)}
 
 /* Footer */
-footer{background:var(--primary-dark);color:var(--sand);text-align:center;padding:1.5rem 1rem;margin-top:3rem;font-size:.85rem}
-footer a{color:var(--accent);text-decoration:none}
+footer{background:var(--black);color:var(--light-grey);text-align:center;padding:3rem 1.5rem;margin-top:4rem;font-size:.85rem}
+footer p{margin-bottom:.5rem}
+footer a{color:var(--gold);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--gold-light)}
 
 /* Utility */
-.breadcrumb{font-size:.85rem;color:var(--text-light);margin-bottom:1rem}
-.breadcrumb a{color:var(--primary);text-decoration:none}
-.btn{display:inline-block;padding:.6rem 1.2rem;background:var(--accent);color:var(--text);font-weight:600;border-radius:var(--radius);text-decoration:none;font-size:.95rem}
-.btn:hover{opacity:.9}
+.breadcrumb{font-size:.8rem;color:var(--grey);margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:.05em}
+.breadcrumb a{color:var(--charcoal);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--gold)}
+
+.btn{display:inline-block;padding:.9rem 2rem;background:var(--white);color:var(--black);font-weight:500;text-decoration:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--white);transition:all .3s}
+.btn:hover{background:transparent;color:var(--white)}
+
+.btn-dark{background:var(--black);color:var(--white);border-color:var(--black)}
+.btn-dark:hover{background:var(--white);color:var(--black)}
+
+/* Image gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin:2rem 0}
+.gallery img{width:100%;height:200px;object-fit:cover;filter:grayscale(20%);transition:filter .3s}
+.gallery img:hover{filter:grayscale(0%)}
+
+/* Attribution box */
+.attribution{font-size:.75rem;color:var(--grey);margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--light-grey)}
+.attribution h3{font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem;color:var(--charcoal)}
+.attribution ul{list-style:none;margin:0;padding:0}
+.attribution li{margin-bottom:.35rem}
+.attribution a{color:var(--grey);text-decoration:underline}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{font-size:2rem}
+  .beach-detail h1{font-size:1.75rem}
+  .info-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  nav{gap:1rem}
+  nav a{font-size:.75rem}
+}
